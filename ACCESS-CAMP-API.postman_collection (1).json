@@ -1,0 +1,135 @@
+{
+    "info": {
+        "name": "ACCESS CAMP API",
+        "_postman_id": "acces-camp-api-collection",
+        "description": "Postman collection for testing the ACCESS CAMP Flask API routes.",
+        "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+    },
+    "item": [
+        {
+            "name": "Campers",
+            "item": [
+                {
+                    "name": "Get All Campers",
+                    "request": {
+                        "method": "GET",
+                        "url": "{{base_url}}/campers"
+                    }
+                },
+                {
+                    "name": "Get Camper by ID",
+                    "request": {
+                        "method": "GET",
+                        "url": "{{base_url}}/campers/1"
+                    }
+                },
+                {
+                    "name": "Create Camper",
+                    "request": {
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\n    \"name\": \"John Doe\",\n    \"age\": 12\n}"
+                        },
+                        "url": "{{base_url}}/campers"
+                    }
+                },
+                {
+                    "name": "Update Camper",
+                    "request": {
+                        "method": "PATCH",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\n    \"age\": 13\n}"
+                        },
+                        "url": "{{base_url}}/campers/1"
+                    }
+                },
+                {
+                    "name": "Delete Camper",
+                    "request": {
+                        "method": "DELETE",
+                        "url": "{{base_url}}/campers/1"
+                    }
+                }
+            ]
+        },
+        {
+            "name": "Activities",
+            "item": [
+                {
+                    "name": "Get All Activities",
+                    "request": {
+                        "method": "GET",
+                        "url": "{{base_url}}/activities"
+                    }
+                },
+                {
+                    "name": "Create Activity",
+                    "request": {
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\n    \"name\": \"Hiking\",\n    \"difficulty\": \"Easy\"\n}"
+                        },
+                        "url": "{{base_url}}/activities"
+                    }
+                },
+                {
+                    "name": "Delete Activity",
+                    "request": {
+                        "method": "DELETE",
+                        "url": "{{base_url}}/activities/1"
+                    }
+                }
+            ]
+        },
+        {
+            "name": "Signups",
+            "item": [
+                {
+                    "name": "Get All Signups",
+                    "request": {
+                        "method": "GET",
+                        "url": "{{base_url}}/signups"
+                    }
+                },
+                {
+                    "name": "Create Signup",
+                    "request": {
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\n    \"camper_id\": 1,\n    \"activity_id\": 1,\n    \"time\": \"10:00\"\n}"
+                        },
+                        "url": "{{base_url}}/signups"
+                    }
+                }
+            ]
+        }
+    ]
+}
