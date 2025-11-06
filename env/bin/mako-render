@@ -1,0 +1,12 @@
+<<<<<<< HEAD
+#!/home/ngatia/Development/code/phase-4/ACCESS-CAMP/env/bin/python3
+=======
+#!/home/ngatia/Development/code/phase-4/ACCESS-CAMP/ACCESS-CAMP/env/bin/python3
+>>>>>>> 5a63f92 (complete Flask API implementation for ACCESS-CAMP)
+# -*- coding: utf-8 -*-
+import re
+import sys
+from mako.cmd import cmdline
+if __name__ == '__main__':
+    sys.argv[0] = re.sub(r'(-script\.pyw|\.exe)?$', '', sys.argv[0])
+    sys.exit(cmdline())
