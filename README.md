@@ -130,6 +130,7 @@ pytest -x
 📝 Example API Responses
 GET /campers
 json
+```
 [
   {"id": 1, "name": "Caitlin", "age": 8},
   {"id": 2, "name": "Lizzie", "age": 9}
@@ -154,9 +155,11 @@ json
     }
   ]
 }
+```
 
 POST /signups (Success)
 json
+```
 {
   "id": 100,
   "camper_id": 1,
@@ -173,6 +176,7 @@ json
     "age": 11
   }
 }
+```
 
 
 🗂️ Project Structure
@@ -204,6 +208,7 @@ Cascade delete: Deleting an activity removes associated signups
 🚨 Error Responses
 Validation Errors
 json
+```
 {
   "errors": ["validation errors"]
 }
@@ -212,6 +217,7 @@ json
 {
   "error": "Camper not found"
 }
+```
 
 👨‍💻 Development
 This is an API-only implementation - no frontend code is included. The focus is on building a robust, well-structured Flask backend following MVC architecture patterns.
