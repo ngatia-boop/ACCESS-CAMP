@@ -9,7 +9,11 @@ alias deactivate 'test $?_OLD_VIRTUAL_PATH != 0 && setenv PATH "$_OLD_VIRTUAL_PA
 # Unset irrelevant variables.
 deactivate nondestructive
 
+<<<<<<< HEAD
 setenv VIRTUAL_ENV /home/ngatia/Development/code/phase-4/ACCESS-CAMP/env
+=======
+setenv VIRTUAL_ENV /home/ngatia/Development/code/phase-4/ACCESS-CAMP/ACCESS-CAMP/env
+>>>>>>> 5a63f92 (complete Flask API implementation for ACCESS-CAMP)
 
 set _OLD_VIRTUAL_PATH="$PATH"
 setenv PATH "$VIRTUAL_ENV/"bin":$PATH"

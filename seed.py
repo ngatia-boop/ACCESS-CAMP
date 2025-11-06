@@ -1,20 +1,59 @@
-from server.app import app, db
-from server.models import Camper, Activity
+from server import create_app
+from server.models import db, Camper, Activity, Signup
 
-# Use app context
-with app.app_context():
-    # Create tables if they don't exist
-    db.create_all()
+def seed_database():
+    app = create_app()
+    
+    with app.app_context():
+        # Clear existing data
+        print("Dropping all tables...")
+        db.drop_all()
+        print("Creating all tables...")
+        db.create_all()
+        
+        # Create campers
+        print("Creating campers...")
+        campers = [
+            Camper(name="Caitlin", age=8),
+            Camper(name="Lizzie", age=9),
+            Camper(name="Nicholas Martinez", age=12),
+            Camper(name="Zoe", age=11),
+            Camper(name="Ashley Delgado", age=11)
+        ]
+        
+        for camper in campers:
+            db.session.add(camper)
+        
+        # Create activities
+        print("Creating activities...")
+        activities = [
+            Activity(name="Archery", difficulty=2),
+            Activity(name="Swimming", difficulty=3),
+            Activity(name="Swim in the lake", difficulty=3),
+            Activity(name="Hiking by the stream", difficulty=2),
+            Activity(name="Listening to the birds chirp", difficulty=1)
+        ]
+        
+        for activity in activities:
+            db.session.add(activity)
+        
+        db.session.commit()
+        print("Campers and activities committed!")
+        
+        # Create signups
+        print("Creating signups...")
+        signups = [
+            Signup(camper_id=3, activity_id=4, time=8),
+            Signup(camper_id=3, activity_id=5, time=1),
+            Signup(camper_id=5, activity_id=3, time=9)
+        ]
+        
+        for signup in signups:
+            db.session.add(signup)
+        
+        db.session.commit()
+        print("Signups committed!")
+        print("Database seeded successfully!")
 
-    # Add sample campers
-    camper1 = Camper(name="Alice", age=10)
-    camper2 = Camper(name="Bob", age=12)
-
-    # Add sample activities
-    activity1 = Activity(name="Archery", difficulty=2)
-    activity2 = Activity(name="Swimming", difficulty=3)
-
-    db.session.add_all([camper1, camper2, activity1, activity2])
-    db.session.commit()
-
-    print("Seed data added successfully!")
+if __name__ == '__main__':
+    seed_database()

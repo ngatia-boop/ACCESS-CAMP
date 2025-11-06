@@ -33,7 +33,11 @@ end
 # Unset irrelevant variables.
 deactivate nondestructive
 
+<<<<<<< HEAD
 set -gx VIRTUAL_ENV /home/ngatia/Development/code/phase-4/ACCESS-CAMP/env
+=======
+set -gx VIRTUAL_ENV /home/ngatia/Development/code/phase-4/ACCESS-CAMP/ACCESS-CAMP/env
+>>>>>>> 5a63f92 (complete Flask API implementation for ACCESS-CAMP)
 
 set -gx _OLD_VIRTUAL_PATH $PATH
 set -gx PATH "$VIRTUAL_ENV/"bin $PATH
